@@ -1,0 +1,61 @@
+## Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build Results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Visual Studio Code workspace settings
+*.code-workspace
+
+## VS for Mac
+.idea/
+*.pidb
+*.userprefs
+
+## Rider
+.idea/
+*.sln.iml
+
+## File Indexes
+*.vsidx
+*.sdf
+*.cachefile
+*.dbmdl
+
+## Others
+_ReSharper*/
+*.DotSettings.user
+*.vspscc
+*.vssscc
+*.pdb
+*.mdb
+*.bak
+*.orig
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Auto-generated
+Generated_Code/
