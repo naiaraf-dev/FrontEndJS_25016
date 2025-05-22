@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacil Comidas Caseras</title>
+    <link rel="icon" type="image/png" href="img/logo/logo-sacil1.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo/logo-sacil1.png" alt="Sacil Comidas Caseras" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="abrir-carrito">
+                <i class="bi bi-cart"></i> <span id="contador-carrito">0</span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Cocina casera, lista para disfrutar en casa</h1>
+                    <p class="subtitulo">Platos caseros listos para servir en tu mesa, hechos con los ingredientes más frescos</p>
+                    <a href="#products" class="btn btn-primary btn-lg">Hacé tu pedido</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/menu-semanal(1).jpg" alt="Menu Semanal" class="img-fluid rounded hero-img">
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- Productos -->
+    <section class="featured-products py-5">
+        <div class="container">
+        <h2 class="text-center mb-5">Productos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+            <div class="card product-card">
+                <div class="badge bg-danger position-absolute top-0 end-0 m-2">Más vendido</div>
+                <img src="img/dulce/budin-limon.jpeg" class="card-img-top" alt="Budin de limon casero">
+                <div class="card-body">
+                <h5 class="card-title">Budín de limón casero</h5>
+                <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                <p class="price">$9000</p>
+                <button class="btn btn-primary add-to-cart" data-id="1" data-name="Budín de limon casero" data-price="9000">Añadir al carrito</button>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4 mb-4">
+            <div class="card product-card">
+                <img src="img/salado/empanadas-carne-criollas.jpg" class="card-img-top" alt="Empanadas de carne">
+                <div class="card-body">
+                <h5 class="card-title">Empanadas de carne (1/2 docena)</h5>
+                <p class="card-text">Crispy pastry filled with seasoned meat and vegetables.</p>
+                <p class="price">$12000</p>
+                <button class="btn btn-primary add-to-cart" data-id="2" data-name="Empanadas de carne" data-price="12000">Añadir al carrito</button>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4 mb-4">
+            <div class="card product-card">
+                <div class="badge bg-success position-absolute top-0 end-0 m-2">Nuevo</div>
+                <img src="img/salado/lasagna.jpg" class="card-img-top" alt="Lasagna Casera">
+                <div class="card-body">
+                <h5 class="card-title">Lasaña casera</h5>
+                <p class="card-text">Layers of pasta, rich meat sauce, and creamy cheese.</p>
+                <p class="price">$8000</p>
+                <button class="btn btn-primary add-to-cart" data-id="3" data-name="Lasagna Casera" data-price="8000">Añadir al carrito</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+<!-- Sección Productos -->
+    <section id="products" class="products-section py-5 bg-light">
+        <div class="container">
+        <h2 class="text-center mb-5">Nuestro Menú</h2>
+        
+        <!-- Tabs Categorías -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="productTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="platos-tab" data-bs-toggle="pill" data-bs-target="#platos" type="button">Platos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="empanadas-tab" data-bs-toggle="pill" data-bs-target="#empanadas" type="button">Empanadas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pizzas-tab" data-bs-toggle="pill" data-bs-target="#pizzas" type="button">Pizzas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tartas-tab" data-bs-toggle="pill" data-bs-target="#tartas" type="button">Tartas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pan-tab" data-bs-toggle="pill" data-bs-target="#pan" type="button">Pan</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="dulce-tab" data-bs-toggle="pill" data-bs-target="#dulce" type="button">Dulce</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="vegano-tab" data-bs-toggle="pill" data-bs-target="#vegano" type="button">Vegano</button>
+            </li>
+        </ul>
+        
+        <!-- Contenido -->
+        <div class="tab-content" id="productTabContent">
+            <!-- Platos -->
+            <div class="tab-pane fade show active" id="platos" role="tabpanel">
+            <div class="row">
+                <!-- Arroz con pollo -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/arroz-con-pollo.jpg" class="card-img-top" alt="Arroz con Pollo">
+                    <div class="card-body">
+                    <h5 class="card-title">Arroz con pollo</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$7500</p>
+                    <button class="btn btn-primary add-to-cart" data-id="1" data-name="Arroz con Pollo" data-price="7500">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Pastel de papa -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pastel-de-papa.jpg" class="card-img-top" alt="Pastel de Papa">
+                    <div class="card-body">
+                    <h5 class="card-title">Pastel de papa</h5>
+                    <p class="card-text">Crispy pastry filled with seasoned meat and vegetables.</p>
+                    <p class="price">$8000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="2" data-name="Pastel de Papa" data-price="8000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Milanesa con puré -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/milanesa-pure.jpg" class="card-img-top" alt="Milanesa con Pure">
+                    <div class="card-body">
+                    <h5 class="card-title">Milanesa con puré</h5>
+                    <p class="card-text">Layers of pasta, rich meat sauce, and creamy cheese.</p>
+                    <p class="price">$8000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="3" data-name="Milanesa con Pure" data-price="8000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Lasaña -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/lasagna.jpg" class="card-img-top" alt="Lasaña">
+                    <div class="card-body">
+                    <h5 class="card-title">Lasaña</h5>
+                    <p class="card-text">Classic Lasaña with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$8000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="4" data-name="Lasaña" data-price="8000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Guiso de lentejas -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/guiso-lentejas.jpg" class="card-img-top" alt="Guiso de lentejas">
+                    <div class="card-body">
+                    <h5 class="card-title">Guiso de lentejas</h5>
+                    <p class="card-text">Classic Guiso de lentejas with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$7500</p>
+                    <button class="btn btn-primary add-to-cart" data-id="5" data-name="Guiso de lentejas" data-price="7500">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Locro -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/locro.jpg" class="card-img-top" alt="Locro">
+                    <div class="card-body">
+                    <h5 class="card-title">Locro</h5>
+                    <p class="card-text">Classic Locro with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$8000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="6" data-name="Locro" data-price="8000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Empanadas -->
+            <div class="tab-pane fade" id="empanadas" role="tabpanel">
+            <div class="row">
+                <!-- Empanada de carne -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/empanadas-carne-criollas.jpg" class="card-img-top" alt="Empanadas de carne">
+                    <div class="card-body">
+                    <h5 class="card-title">Empanadas de carne</h5>
+                    <p class="card-text">Crispy pastry filled with seasoned meat and vegetables.</p>
+                    <p class="price">$2000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="1" data-name="Empanadas de carne" data-price="2000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Empanada de pollo -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/empanada-de-pollo.jpg" class="card-img-top" alt="Empanada de pollo">
+                    <div class="card-body">
+                    <h5 class="card-title">Empanada de pollo</h5>
+                    <p class="card-text">Layers of pasta, rich meat sauce, and creamy cheese.</p>
+                    <p class="price">$2000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="2" data-name="Empanada de pollo" data-price="2000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Empanada de jyq -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/empanada-jyq.jpg" class="card-img-top" alt="Empanada de jamon y queso">
+                    <div class="card-body">
+                    <h5 class="card-title">Empanada de jamón y queso</h5>
+                    <p class="card-text">Layers of pasta, rich meat sauce, and creamy cheese.</p>
+                    <p class="price">$2000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="3" data-name="Empanada de jamon y queso" data-price="2000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Empanada de humita -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/empanada-humita.jpg" class="card-img-top" alt="Empanada de humita">
+                    <div class="card-body">
+                    <h5 class="card-title">Empanada de humita</h5>
+                    <p class="card-text">Layers of pasta, rich meat sauce, and creamy cheese.</p>
+                    <p class="price">$2000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="4" data-name="Empanada de humita" data-price="2000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Empanada de verdura -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/vegano/empanada-verdura-vegana.jpg" class="card-img-top" alt="Empanada de verdura">
+                    <div class="card-body">
+                    <h5 class="card-title">Empanada de verdura</h5>
+                    <p class="card-text">Layers of pasta, rich meat sauce, and creamy cheese.</p>
+                    <p class="price">$2000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="5" data-name="Empanada de verdura" data-price="2000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Pizzas -->
+            <div class="tab-pane fade" id="pizzas" role="tabpanel">
+            <div class="row">
+                <!-- Pizza muzza -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pizza-mozzarella.jpg" class="card-img-top" alt="Pizza Muzzarella">
+                    <div class="card-body">
+                    <h5 class="card-title">Pizza Muzzarella</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="1" data-name="Pizza Muzzarella" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Pizza jamón y morrón  -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pizza_jamon_y_morron.jpg" class="card-img-top" alt="Pizza jamon y morron">
+                    <div class="card-body">
+                    <h5 class="card-title">Pizza jamón y morrón</h5>
+                    <p class="card-text">Classic Pizza jamon y morron with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="2" data-name="Pizza jamon y morron" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pizza fugazzeta -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/fugazzeta.jpg" class="card-img-top" alt="Fugazzeta">
+                    <div class="card-body">
+                    <h5 class="card-title">Fugazzeta</h5>
+                    <p class="card-text">Classic Fugazzeta with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="3" data-name="Fugazzeta" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Fugazzeta rellena jyq-->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/fugazzeta-jyq.jpg" class="card-img-top" alt="Fugazzeta rellena de jamon y queso">
+                    <div class="card-body">
+                    <h5 class="card-title">Fugazzeta rellena de jamón y queso</h5>
+                    <p class="card-text">Classic Fugazzeta rellena de jamon y queso with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="4" data-name="Fugazzeta rellena de jamon y queso" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Faina-->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/faina.jpg" class="card-img-top" alt="Faina">
+                    <div class="card-body">
+                    <h5 class="card-title">Faina</h5>
+                    <p class="card-text">Classic Faina with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$1500 c/u</p>
+                    <button class="btn btn-primary add-to-cart" data-id="5" data-name="Faina" data-price="1500">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Faina verdeo-->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/faina-verdeo.jpg" class="card-img-top" alt="Faina verdeo">
+                    <div class="card-body">
+                    <h5 class="card-title">Faina con verdeo</h5>
+                    <p class="card-text">Classic Faina con verdeo with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$1500 c/u</p>
+                    <button class="btn btn-primary add-to-cart" data-id="6" data-name="Faina verdeo" data-price="1500">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Tartas -->
+            <div class="tab-pane fade" id="tartas" role="tabpanel">
+            <div class="row">
+                <!-- Tarta jyq (Grande) -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/tarta-jyq.jpg" class="card-img-top" alt="Tarta jqy">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarta de jamón y queso (Grande)</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="1" data-name="Tarta jqy" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Tarta tricolor (Grande) -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/tarta-tricolor.jpg" class="card-img-top" alt="Tarta Tricolor">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarta tricolor (Grande)</h5>
+                    <p class="card-text">Classic Tarta Tricolor with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="2" data-name="Tarta Tricolor" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Tarta de verdura (Grande) -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/tarta-verdura.jpg" class="card-img-top" alt="Tarta verdura">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarta de verdura (Grande)</h5>
+                    <p class="card-text">Classic Tarta de verdura with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="3" data-name="Tarta verdura" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Tarta jyq (Individual) -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/tarta-jyq.jpg" class="card-img-top" alt="Tarta jqy">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarta de jamón y queso (Individual)</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$6000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="4" data-name="Tarta jqy ind" data-price="6000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Tarta tricolor (Individual) -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/tarta-tricolor.jpg" class="card-img-top" alt="Tarta Tricolor">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarta tricolor (Individual)</h5>
+                    <p class="card-text">Classic Tarta Tricolor with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$6000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="5" data-name="Tarta Tricolor ind" data-price="6000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Tarta de verdura (Individual) -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/tarta-verdura.jpg" class="card-img-top" alt="Tarta verdura">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarta de verdura (Individual)</h5>
+                    <p class="card-text">Classic Tarta de verdura with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$6000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="6" data-name="Tarta verdura ind" data-price="6000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Pan -->
+            <div class="tab-pane fade" id="pan" role="tabpanel">
+            <div class="row">
+                <!-- Pan de campo -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pan-casero-campo.jpg" class="card-img-top" alt="Pan Campo">
+                    <div class="card-body">
+                    <h5 class="card-title">Pan de campo casero</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="1" data-name="Pan Campo" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Pan integral  -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pan-integral.jpg" class="card-img-top" alt="Pan Integral">
+                    <div class="card-body">
+                    <h5 class="card-title">Pan integral casero</h5>
+                    <p class="card-text">Classic Pan integral casero with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="2" data-name="Pan Integral" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pan relleno jyq -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pan-relleno-jyq.jpg" class="card-img-top" alt="Pan Relleno">
+                    <div class="card-body">
+                    <h5 class="card-title">Pan relleno de jamón y queso</h5>
+                    <p class="card-text">Classic Pan relleno de jamón y queso with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="3" data-name="Pan Relleno" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Dulce -->
+            <div class="tab-pane fade" id="dulce" role="tabpanel">
+            <div class="row">
+                <!-- Budin de limón -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budin-limon.jpeg" class="card-img-top" alt="Budin Limon">
+                    <div class="card-body">
+                    <h5 class="card-title">Budín de limón</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="1" data-name="Budin Limon" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Budin de banana y nuez -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budin-banana-nuez.jpg" class="card-img-top" alt="Budin Banana Nuez">
+                    <div class="card-body">
+                    <h5 class="card-title">Budín de banana y nuez</h5>
+                    <p class="card-text">Classic Budin de banana y nuez with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="2" data-name="Budin Banana Nuez" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Budin de chocolate -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budinChocolate.jpg" class="card-img-top" alt="Budin Chocolate">
+                    <div class="card-body">
+                    <h5 class="card-title">Budín de chocolate</h5>
+                    <p class="card-text">Classic Budín de chocolate with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="3" data-name="Budin Chocolate" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Budin de banana, zanahoria y nuez -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budin-banana-zanahoria-nuez.jpg" class="card-img-top" alt="Budin banana zanahoria">
+                    <div class="card-body">
+                    <h5 class="card-title">Budin de banana, zanahoria y nuez</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="4" data-name="Budin banana zanahoria" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Budin navideño -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budin-navideño.jpg" class="card-img-top" alt="Budin Navidenio">
+                    <div class="card-body">
+                    <h5 class="card-title">Budin Navideño</h5>
+                    <p class="card-text">Classic Budin Navideño with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="5" data-name="Budin Navidenio ind" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pastafrola -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/pastafrola-membrillo.jpg" class="card-img-top" alt="Pastafrola">
+                    <div class="card-body">
+                    <h5 class="card-title">Pastafrola</h5>
+                    <p class="card-text">Classic Pastafrola with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="6" data-name="Pastafrola" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Tarta de ricota y dulce de leche -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/tarta-ricota-dulce_de_leche.jpg" class="card-img-top" alt="Tarta Ricota">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarta de ricota y dulce de leche</h5>
+                    <p class="card-text">Classic Tarta de ricota y dulce de leche with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="7" data-name="Tarta Ricota" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Rosca de pascua -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/rosca-pascua.jpg" class="card-img-top" alt="Rosca">
+                    <div class="card-body">
+                    <h5 class="card-title">Rosca de pascua</h5>
+                    <p class="card-text">Classic Rosca de pascua with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="8" data-name="Rosca" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pan dulce frutos secos -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/pan-dulce-frutos-secos.jpg" class="card-img-top" alt="Pan Dulce">
+                    <div class="card-body">
+                    <h5 class="card-title">Pan dulce con frutos secos</h5>
+                    <p class="card-text">Classic Pan dulce con frutos secos with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="9" data-name="Pan Dulce" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pan dulce chocolate -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/pan-dulce-chocolate.jpg" class="card-img-top" alt="Pan Dulce Chocolate">
+                    <div class="card-body">
+                    <h5 class="card-title">Pan dulce con chips de chocolate</h5>
+                    <p class="card-text">Classic Pan dulce con chips de chocolate with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$15000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="10" data-name="Pan Dulce Chocolate" data-price="15000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Vegano -->
+            <div class="tab-pane fade" id="vegano" role="tabpanel">
+            <div class="row">
+                <!-- Milanesa de berenjena -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/vegano/milanesa-berenjena-pure.jpeg" class="card-img-top" alt="Milanesa Berenjena">
+                    <div class="card-body">
+                    <h5 class="card-title">Milanesa de berenjena con puré</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$8000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="1" data-name="Milanesa Berenjena" data-price="8000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Empanadas de verdura -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/vegano/empanada-verdura-vegana.jpg" class="card-img-top" alt="Empanada Vegana">
+                    <div class="card-body">
+                    <h5 class="card-title">Empanadas de verdura</h5>
+                    <p class="card-text">Classic Budin de banana y nuez with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$2000 c/u</p>
+                    <button class="btn btn-primary add-to-cart" data-id="2" data-name="Empanada Vegana" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pizza vegana -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/vegano/pizza-vegana-champinones.jpg" class="card-img-top" alt="Pizza Vegana">
+                    <div class="card-body">
+                    <h5 class="card-title">Pizza vegana con champiñones</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$17000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="3" data-name="Pizza Vegana" data-price="17000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Guiso de lentejas -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/vegano/guiso-lentejas-vegano.jpg" class="card-img-top" alt="Guiso Vegano">
+                    <div class="card-body">
+                    <h5 class="card-title">Guiso de lentejas vegano</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$8000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="4" data-name="Budin banana zanahoria" data-price="8000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Budin de limón -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budin-limon.jpeg" class="card-img-top" alt="Budin Limon">
+                    <div class="card-body">
+                    <h5 class="card-title">Budín de limón</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="5" data-name="Budin Limon" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Budin de banana y nuez -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budin-banana-nuez.jpg" class="card-img-top" alt="Budin Banana Nuez">
+                    <div class="card-body">
+                    <h5 class="card-title">Budín de banana y nuez</h5>
+                    <p class="card-text">Classic Budin de banana y nuez with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="6" data-name="Budin Banana Nuez" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Budin de banana, zanahoria y nuez -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/dulce/budin-banana-zanahoria-nuez.jpg" class="card-img-top" alt="Budin banana zanahoria">
+                    <div class="card-body">
+                    <h5 class="card-title">Budin de banana, zanahoria y nuez</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="7" data-name="Budin banana zanahoria" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pan de campo -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pan-casero-campo.jpg" class="card-img-top" alt="Pan Campo Vegano">
+                    <div class="card-body">
+                    <h5 class="card-title">Pan de campo casero</h5>
+                    <p class="card-text">Rich, moist chocolate cake with a smooth ganache topping.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="8" data-name="Pan Campo Vegano" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Pan integral  -->
+                <div class="col-md-3 mb-4">
+                <div class="card product-card">
+                    <img src="img/salado/pan-integral.jpg" class="card-img-top" alt="Pan Integral Vegano">
+                    <div class="card-body">
+                    <h5 class="card-title">Pan integral casero</h5>
+                    <p class="card-text">Classic Pan integral casero with a flaky crust and cinnamon filling.</p>
+                    <p class="price">$9000</p>
+                    <button class="btn btn-primary add-to-cart" data-id="9" data-name="Pan Integral Vegano" data-price="9000">Añadir al carrito</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Sección About -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+            <img src="img/cocina-casera.jpeg" alt="Sobre Sacil Comidas Caseras" class="img-fluid rounded">
+            </div>
+            <div class="col-lg-6">
+            <h2>Sobre Sacil Comidas Caseras</h2>
+            <p class="lead">"Llevando sabor casero a cada mesa"</p>
+            <p>Sacil nació en nuestra cocina familiar, con recetas heredadas de generación en generación. Lo que comenzó como una costumbre de cocinar para los nuestros, hoy se transformó en una pasión por compartir sabores auténticos con toda la comunidad.</p>
+            <p>Preparamos cada plato con ingredientes frescos y dedicación, como si fuera para nuestra propia familia. Ofrecemos una variedad de comidas caseras — dulces y saladas — pensadas para acompañarte todos los días o en ocasiones especiales.</p>
+            <div class="d-flex mt-4">
+                <div class="me-4">
+                <h4>40+</h4>
+                <p>Platos caseros</p>
+                </div>
+                <div class="me-4">
+                <h4>500+</h4>
+                <p>Clientes felices</p>
+                </div>
+                <div>
+                <h4>5+</h4>
+                <p>Años de experiencia</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonios py-5 bg-light">
+        <div class="container">
+        <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                <div class="d-flex mb-3">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                </div>
+                <p class="card-text">"El budín de limón fue una locura. Húmeda, sabrosa y equilibrada. Fue lo mejor de la juntada con amigas."</p>
+                <div class="d-flex align-items-center mt-3">
+                    <img src="img/clientes/florencia-gomez.jpeg" alt="Customer" class="rounded-circle me-3" width="50" height="50">
+                    <div>
+                    <h6 class="mb-0">Florencia Gómez</h6>
+                    <small class="text-muted">Cliente habitual</small>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                <div class="d-flex mb-3">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                </div>
+                <p class="card-text">"Llevé empanadas al trabajo y volaron. Todos me preguntaban dónde las había comprado. ¡Volveré a pedir seguro!"</p>
+                <div class="d-flex align-items-center mt-3">
+                    <img src="img/clientes/martin-rodriguez.jpg" alt="Customer" class="rounded-circle me-3" width="50" height="50">
+                    <div>
+                    <h6 class="mb-0">Martín Rodríguez</h6>
+                    <small class="text-muted">Cliente empresarial</small>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                <div class="d-flex mb-3">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                </div>
+                <p class="card-text">"La lasaña me hizo acordar a la que hacía mi abuela. ¡Qué placer encontrar algo así hoy en día!"</p>
+                <div class="d-flex align-items-center mt-3">
+                    <img src="img/clientes/emilia-bellucci.jpeg" alt="Customer" class="rounded-circle me-3" width="50" height="50">
+                    <div>
+                    <h6 class="mb-0">Emilia Bellucci</h6>
+                    <small class="text-muted">Cliente reciente</small>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="seccion-contacto py-5">
+        <div class="container">
+        <h2 class="text-center mb-5">Contacto</h2>
+        <div class="row">
+        
+        <!-- Formulario -->
+        <div class="col-md-6 mb-4 mb-md-0">
+            <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Escribinos</h5>
+                
+                <form action="https://formspree.io/f/myzwadrb" method="POST">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </form>
+
+            </div>
+            </div>
+        </div>
+        
+        <!-- Información de contacto -->
+        <div class="col-md-6">
+            <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Información</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-geo-alt me-2"></i> CABA, Argentina
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-telephone me-2"></i> (011) 4567-8910
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-envelope me-2"></i> sacil.comidas@gmail.com
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-clock me-2"></i> Lunes a viernes: 9 a 17 h / Sábados: 10 a 14 h
+                    </li>
+                </ul>
+                <h5 class="mt-4">Seguinos</h5>
+                <div class="social-icons">
+                    <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+            <h5>Sacil Comidas Caseras</h5>
+            <p>"Llevando sabor casero a cada mesa"</p>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+            <h5>Enlaces útiles</h5>
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Inicio</a></li>
+                <li><a href="#products" class="text-white">Productos</a></li>
+                <li><a href="#about" class="text-white">Sobre nosotros</a></li>
+                <li><a href="#contact" class="text-white">Contacto</a></li>
+            </ul>
+            </div>
+            <div class="col-md-4">
+            <h5>Novedades</h5>
+            <p>Suscribite para recibir actualizaciones y promociones especiales.</p>
+            <form class="d-flex">
+                <input type="email" class="form-control me-2" placeholder="Tu correo electrónico">
+                <button type="submit" class="btn btn-primary">Suscribirme</button>
+            </form>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 Sacil Comidas Caseras. Todos los derechos reservados.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
